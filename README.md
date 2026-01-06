@@ -7,6 +7,7 @@ A simple and configurable Zettelkasten ID (ZID) generator for Python. Specifical
 - [Installation](#installation)
 - [Usage](#usage)
 - [AutoHotkey Integration](#autohotkey-integration)
+  - [zid.ahk](#zidahk)
 - [Configuration](#configuration)
 - [Testing](#testing)
 - [Kardenwort Ecosystem](#kardenwort-ecosystem)
@@ -44,6 +45,9 @@ The output will be printed to the console and copied to your clipboard.
 ## AutoHotkey Integration
 
 ### zid.ahk
+
+For a full collection of AHK scripts, see [voothi/20240411110510-autohotkey](https://github.com/voothi/20240411110510-autohotkey).
+
 
 - **Description**: A simple utility to insert a timestamp in the format `YYYYMMDDHHMMSS`. Ideal for creating unique identifiers for notes or files.
 - **Hotkey**: `Ctrl + Shift + /`
