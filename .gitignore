@@ -91,3 +91,10 @@ build
 *.spec
 dist/
 ref/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
