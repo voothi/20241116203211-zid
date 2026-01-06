@@ -1,6 +1,6 @@
 # ZID Generator
 
-A simple and configurable Zettelkasten ID (ZID) generator for Python.
+A simple and configurable Zettelkasten ID (ZID) generator for Python. Specifically designed for creating timestamp-based IDs for your notes.
 
 ## Features
 - **Fast**: Generates a timestamp-based ID in milliseconds.
@@ -23,6 +23,23 @@ python zid.py
 
 The output will be printed to the console and copied to your clipboard.
 
+## AutoHotkey Integration
+
+For a more seamless workflow, you can use an AutoHotkey script to map the generation to a shortcut (e.g., `Ctrl + Alt + T`).
+
+1.  Create a file named `zid.ahk`.
+2.  Add the following script (update the python path):
+    ```autohotkey
+    ^!t:: ; Ctrl + Alt + T
+    {
+        RunWait, python "C:\Top\Path\To\zid.py",, Hide
+        Send, ^v
+    }
+    return
+    ```
+3.  Run the script. Now pressing `Ctrl + Alt + T` will generate and paste a ZID.
+
+
 ## Configuration
 
 Create a `config.ini` in the project root to customize the output:
@@ -43,6 +60,11 @@ Run the tests using Python's built-in `unittest` module:
 ```bash
 python -m unittest discover tests
 ```
+
+## Kardenwort Ecosystem
+
+This project is part of the [Kardenwort](https://github.com/kardenwort) environment, designed to create a focused and efficient learning ecosystem.
+
 
 ## License
 MIT
