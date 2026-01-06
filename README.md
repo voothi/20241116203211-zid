@@ -1,6 +1,6 @@
 # ZID Generator
-![Version](https://img.shields.io/badge/version-v1.0.0-blue)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+[![Version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/voothi/20241116203211-zid)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/voothi/20241116203211-zid/blob/main/LICENSE)
 
 A simple and configurable Zettelkasten ID (ZID) generator for Python. Specifically designed for creating timestamp-based IDs for your notes.
 
