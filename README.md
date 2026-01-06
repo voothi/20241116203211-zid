@@ -43,19 +43,22 @@ The output will be printed to the console and copied to your clipboard.
 
 ## AutoHotkey Integration
 
-For a more seamless workflow, you can use an AutoHotkey script to map the generation to a shortcut (e.g., `Ctrl + Alt + T`).
+### zid.ahk
+
+- **Description**: A simple utility to insert a timestamp in the format `YYYYMMDDHHMMSS`. Ideal for creating unique identifiers for notes or files.
+- **Hotkey**: `Ctrl + Shift + /`
 
 1.  Create a file named `zid.ahk`.
 2.  Add the following script (update the python path):
     ```autohotkey
-    ^!t:: ; Ctrl + Alt + T
+    ^+/:: ; Ctrl + Shift + /
     {
-        RunWait, python "C:\Top\Path\To\zid.py",, Hide
+        RunWait, python "C:\Path\To\zid.py",, Hide
         Send, ^v
     }
     return
     ```
-3.  Run the script. Now pressing `Ctrl + Alt + T` will generate and paste a ZID.
+3.  Run the script. Now pressing `Ctrl + Shift + /` will generate and past a ZID.
 
 [Return to Top](#zid-generator)
 
