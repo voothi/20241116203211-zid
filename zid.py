@@ -1,11 +1,11 @@
 import datetime
 import pyperclip
 
-# Получаем текущее время в нужном формате
+# Get the current time in the required format
 current_time = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
 
-# Копируем строку в буфер обмена
+# Copy the string to the clipboard
 pyperclip.copy(current_time)
 
-# Выводим строку на экран
+# Print the string to the screen
 print(current_time)
