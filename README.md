@@ -12,6 +12,7 @@ A simple and configurable Zettelkasten ID (ZID) generator for Python. Specifical
 - [Kardenwort Ecosystem](#kardenwort-ecosystem)
 - [License](#license)
 
+---
 
 ## Features
 - **Fast**: Generates a timestamp-based ID in milliseconds.
@@ -21,7 +22,6 @@ A simple and configurable Zettelkasten ID (ZID) generator for Python. Specifical
 
 [Return to Top](#zid-generator)
 
-
 ## Installation
 
 ```bash
@@ -29,7 +29,6 @@ pip install pyperclip
 ```
 
 [Return to Top](#zid-generator)
-
 
 ## Usage
 
@@ -41,7 +40,6 @@ python zid.py
 The output will be printed to the console and copied to your clipboard.
 
 [Return to Top](#zid-generator)
-
 
 ## AutoHotkey Integration
 
@@ -61,8 +59,6 @@ For a more seamless workflow, you can use an AutoHotkey script to map the genera
 
 [Return to Top](#zid-generator)
 
-
-
 ## Configuration
 
 Create a `config.ini` in the project root to customize the output:
@@ -78,7 +74,6 @@ suffix =
 
 [Return to Top](#zid-generator)
 
-
 ## Testing
 
 Run the tests using Python's built-in `unittest` module:
@@ -89,14 +84,11 @@ python -m unittest discover tests
 
 [Return to Top](#zid-generator)
 
-
 ## Kardenwort Ecosystem
 
 This project is part of the [Kardenwort](https://github.com/kardenwort) environment, designed to create a focused and efficient learning ecosystem.
 
 [Return to Top](#zid-generator)
-
-
 
 ## License
 MIT
