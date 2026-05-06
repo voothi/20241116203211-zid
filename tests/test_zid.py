@@ -1,13 +1,14 @@
 import unittest
 from unittest.mock import patch
 import datetime
+import io
 import sys
 import os
 
 # Add parent directory to path to import zid
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from zid import generate_zid, get_config
+from zid import generate_zid, get_config, main
 
 class TestZid(unittest.TestCase):
     """
@@ -55,6 +56,26 @@ class TestZid(unittest.TestCase):
         self.assertEqual(cfg['format'], '%Y%m%d%H%M%S')
         self.assertEqual(cfg['prefix'], '')
         self.assertEqual(cfg['suffix'], '')
+
+    def test_main_default_copies_to_clipboard(self):
+        with patch('zid.generate_zid', return_value='20260506091212'), \
+             patch('zid.pyperclip.copy') as mock_copy, \
+             patch('sys.stdout', new_callable=io.StringIO) as mock_stdout, \
+             patch.object(sys, 'argv', ['zid.py']):
+            main()
+
+        self.assertEqual(mock_stdout.getvalue().strip(), '20260506091212')
+        mock_copy.assert_called_once_with('20260506091212')
+
+    def test_main_no_clipboard_does_not_copy(self):
+        with patch('zid.generate_zid', return_value='20260506091212'), \
+             patch('zid.pyperclip.copy') as mock_copy, \
+             patch('sys.stdout', new_callable=io.StringIO) as mock_stdout, \
+             patch.object(sys, 'argv', ['zid.py', '--no-clipboard']):
+            main()
+
+        self.assertEqual(mock_stdout.getvalue().strip(), '20260506091212')
+        mock_copy.assert_not_called()
 
 if __name__ == '__main__':
     unittest.main()

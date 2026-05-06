@@ -1,6 +1,6 @@
 import datetime
 import pyperclip
-
+import argparse
 import configparser
 import os
 
@@ -37,11 +37,16 @@ def generate_zid(cfg=None):
     return f"{cfg['prefix']}{timestamp}{cfg['suffix']}"
 
 def main():
+    parser = argparse.ArgumentParser(description='Generate a ZID (Zettelkasten ID)')
+    parser.add_argument('--no-clipboard', action='store_true', help='Output ZID without copying to clipboard')
+    args = parser.parse_args()
+    
     cfg = get_config()
     current_time = generate_zid(cfg)
     
-    # Copy the string to the clipboard
-    pyperclip.copy(current_time)
+    # Copy the string to the clipboard (unless --no-clipboard flag is used)
+    if not args.no_clipboard:
+        pyperclip.copy(current_time)
     
     # Print the string to the screen
     print(current_time)

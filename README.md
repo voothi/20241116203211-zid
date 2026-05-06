@@ -21,6 +21,7 @@ A simple and configurable Zettelkasten ID (ZID) generator for Python. Specifical
 - **Fast**: Generates a timestamp-based ID in milliseconds.
 - **Configurable**: Customize your IDs via `config.ini` (format, prefix, suffix).
 - **Clipboard-Ready**: Automatically copies the generated ID to your clipboard.
+- **No-Clipboard Option**: Use `python zid.py --no-clipboard` to output the ZID without modifying the clipboard.
 - **Tested**: Built-in test suite ensures reliability.
 
 [Return to Top](#zid-generator)
@@ -41,6 +42,13 @@ python zid.py
 ```
 
 The output will be printed to the console and copied to your clipboard.
+
+Run without clipboard copy:
+```bash
+python zid.py --no-clipboard
+```
+
+The output will be printed to the console, but the clipboard will remain unchanged.
 
 [Return to Top](#zid-generator)
 
